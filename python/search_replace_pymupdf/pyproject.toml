@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "search_replace_pymupdf"
+version = "0.1.0"
+description = "A tool to redact text in PDF files using PyMuPDF"
+authors = [
+    { name = "Your Name", email = "your.email@example.com" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }  # Add a license if applicable
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "pymupdf>=1.22.5",  # Specify a minimum version for clarity
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.2.0",
+    "black>=23.1.0",
+    "mypy>=1.0.0",  # Optional: Add static type checking
+    "ruff>=0.0.261",  # Optional: Add linting
+]
+
+[tool.setuptools]
+packages = ["search_replace_pymupdf"]
+
+[tool.setuptools.package-data]
+"*" = ["*.csv", "*.md"]  # Include non-Python files if needed
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+include = '\\.pyi?$'
+exclude = '''
+/(
+    \\.git
+  | \\.hg
+  | \\.mypy_cache
+  | \\.tox
+  | \\.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.pytest.ini_options]
+python_files = "test_*.py"
+addopts = "--cov=pii_pdf_redactor --cov-report=term-missing"
+testpaths = ["tests"]
