@@ -11,8 +11,9 @@
 Quick navigation for the "junk" piles:
 
 *   **/python**: Various Python scrapers and data cleaners.
-*   **/bash**: System shortcuts I'll likely forget tomorrow.
+*   **/scripts**: Shell-scripts and system shortcuts I'll likely forget tomorrow.
 *   **/snippets**: One-liners and reusable loops.
+*   **/notes**: Random thoughts and ideas that may be used some day.
 *   **/archive**: Abandoned wrecks that no longer function.
 
 ## 🛑 Warning
