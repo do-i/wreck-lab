@@ -1,0 +1,12 @@
+# Python junk
+__pycache__/
+*.py[cod]
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Environment/Secrets
+.env
+venv/
+
